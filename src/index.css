@@ -1,0 +1,416 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple Budget Tracker - Student Project Design */
+
+@layer base {
+  :root {
+    /* Modern Color Palette */
+    --background: 220 20% 98%;
+    --foreground: 220 15% 10%;
+    
+    /* Vibrant Gradient Colors */
+    --gradient-start: 262 83% 58%;
+    --gradient-end: 221 83% 53%;
+    --gradient-accent: 200 100% 50%;
+
+    /* Card System with depth */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+
+    /* Popover System */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    /* Primary - Vibrant Purple/Blue */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 262 83% 50%;
+    --primary-light: 262 70% 85%;
+
+    /* Secondary - Teal */
+    --secondary: 174 62% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 174 62% 40%;
+    --secondary-light: 174 50% 85%;
+
+    /* Success - Emerald Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 50% 85%;
+
+    /* Muted Tones - Warmer */
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Vibrant Coral */
+    --accent: 14 100% 57%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 14 80% 85%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    --warning-light: 38 80% 85%;
+
+    /* Destructive - Rose */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 70% 85%;
+
+    /* Modern Elements */
+    --border: 220 15% 88%;
+    --input: 220 15% 96%;
+    --ring: 262 83% 58%;
+
+    /* Layout with more rounding */
+    --radius: 0.75rem;
+
+    /* Advanced Gradient Effects */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(221 83% 53%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(174 62% 47%) 0%, hsl(221 83% 53%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 50%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(14 100% 57%) 0%, hsl(38 92% 50%) 100%);
+    --gradient-mesh: radial-gradient(at 27% 37%, hsl(262 83% 58%) 0px, transparent 50%),
+                      radial-gradient(at 97% 21%, hsl(221 83% 53%) 0px, transparent 50%),
+                      radial-gradient(at 52% 99%, hsl(174 62% 47%) 0px, transparent 50%);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 30px hsl(262 83% 58% / 0.4);
+    --glow-hover: 0 0 50px hsl(262 83% 58% / 0.6);
+    --glow-secondary: 0 0 30px hsl(174 62% 47% / 0.4);
+    
+    /* Shadow System */
+    --shadow-soft: 0 2px 8px hsl(220 15% 10% / 0.05);
+    --shadow-medium: 0 4px 16px hsl(220 15% 10% / 0.1);
+    --shadow-strong: 0 8px 32px hsl(220 15% 10% / 0.15);
+    --shadow-3d: 0 20px 40px hsl(220 15% 10% / 0.2), 0 4px 8px hsl(220 15% 10% / 0.1);
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.4), 0 8px 24px hsl(220 15% 10% / 0.2);
+
+    /* Finance Colors - More Professional */
+    --income: 142 76% 36%;
+    --expense: 0 84% 60%;
+    --savings: 221 83% 53%;
+    --investment: 262 83% 58%;
+    
+    /* Vibrant Category Colors */
+    --category-food: 14 100% 57%;
+    --category-transport: 221 83% 53%;
+    --category-utilities: 174 62% 47%;
+    --category-entertainment: 262 83% 58%;
+    --category-healthcare: 0 84% 60%;
+    --category-education: 250 60% 55%;
+    --category-travel: 200 90% 50%;
+    --category-shopping: 320 70% 55%;
+
+    /* Sidebar Colors */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Modern Dark Mode */
+    --background: 220 20% 8%;
+    --foreground: 220 10% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 220 10% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 10% 95%;
+
+    --primary: 262 90% 70%;
+    --primary-foreground: 220 20% 8%;
+    --primary-hover: 262 90% 60%;
+    --primary-light: 262 50% 25%;
+
+    --secondary: 174 70% 50%;
+    --secondary-foreground: 220 20% 8%;
+    --secondary-hover: 174 70% 45%;
+    --secondary-light: 174 40% 20%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 14 100% 65%;
+    --accent-foreground: 220 20% 8%;
+    --accent-light: 14 60% 25%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 220 20% 8%;
+    --warning-light: 38 60% 25%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 10% 95%;
+    --destructive-light: 0 60% 25%;
+
+    --border: 220 20% 22%;
+    --input: 220 20% 18%;
+    --ring: 262 90% 70%;
+    
+    /* Dark Mode Shadows */
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.2);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.3);
+    --shadow-strong: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-3d: 0 20px 40px hsl(0 0% 0% / 0.5), 0 4px 8px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(262 90% 70% / 0.3), 0 8px 24px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 220 100% 60%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 220 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(220 15% 10% / 0.03) 1.5px, transparent 1.5px),
+      linear-gradient(90deg, hsl(220 15% 10% / 0.03) 1.5px, transparent 1.5px);
+    background-size: 50px 50px;
+  }
+  
+  .dark .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(220 10% 95% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 10% 95% / 0.05) 1px, transparent 1px);
+  }
+}
+
+/* Simple Component Styles */
+@layer components {
+  /* Simple Card Design */
+  .simple-card {
+    @apply bg-card border border-border rounded-md shadow-sm;
+  }
+
+  /* Basic Status Colors */
+  .text-income {
+    color: hsl(var(--income));
+  }
+
+  .text-expense {
+    color: hsl(var(--expense));
+  }
+
+  .text-savings {
+    color: hsl(var(--savings));
+  }
+
+  .text-success {
+    color: hsl(var(--success));
+  }
+
+  /* Category Icons */
+  .category-icon {
+    @apply p-2 rounded-lg text-white;
+  }
+
+  .category-food {
+    background: hsl(var(--category-food));
+  }
+
+  .category-transport {
+    background: hsl(var(--category-transport));
+  }
+
+  .category-utilities {
+    background: hsl(var(--category-utilities));
+  }
+
+  .category-entertainment {
+    background: hsl(var(--category-entertainment));
+  }
+
+  .category-healthcare {
+    background: hsl(var(--category-healthcare));
+  }
+
+  .category-education {
+    background: hsl(var(--category-education));
+  }
+
+  .category-travel {
+    background: hsl(var(--category-travel));
+  }
+
+  .category-shopping {
+    background: hsl(var(--category-shopping));
+  }
+
+  /* Modern 3D Card Effects */
+  .card-3d {
+    @apply relative transition-all duration-500 ease-out;
+    transform-style: preserve-3d;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .card-3d::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    background: var(--gradient-primary);
+    z-index: -1;
+    filter: blur(20px);
+  }
+
+  .card-3d:hover {
+    box-shadow: var(--shadow-3d);
+    transform: translateY(-8px) rotateX(2deg) scale(1.02);
+  }
+
+  .card-3d:hover::before {
+    @apply opacity-20;
+  }
+
+  .stat-card {
+    @apply relative overflow-hidden transition-all duration-500 cursor-pointer;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted) / 0.5) 100%);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-all duration-500;
+    background: var(--gradient-primary);
+  }
+
+  .stat-card::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 opacity-0 transition-opacity duration-500;
+    background: var(--gradient-primary);
+  }
+
+  .stat-card:hover::before {
+    @apply opacity-10;
+  }
+
+  .stat-card:hover::after {
+    @apply opacity-100;
+  }
+
+  .stat-card:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-6px) scale(1.03);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  /* Advanced Glass Effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .dark .glass-effect {
+    background: rgba(30, 30, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  /* Frosted Glass */
+  .frosted-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .frosted-glass {
+    background: rgba(20, 20, 30, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated Gradient Border */
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    z-index: -1;
+    padding: 2px;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .gradient-border:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Pulse Animation */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  /* Floating Animation */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Shimmer Effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
