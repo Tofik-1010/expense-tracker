@@ -1,1 +1,1 @@
-# Smart-Budget-and-Expense-Tracker-
+Expense-Tracker
